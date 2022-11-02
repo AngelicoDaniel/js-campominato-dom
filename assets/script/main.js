@@ -2,6 +2,9 @@ const griglia = document.getElementById('griglia')
 let button = document.getElementById('button')
 let difficulty = document.getElementById('difficulty')
 button.addEventListener('click', game)
+let array = []
+
+
 
 function creazioneBox(){
     div = document.createElement('div');
@@ -11,12 +14,21 @@ function creazioneBox(){
     //var aggettivo = "forte";
     //var frase = "goku è " + aggettivo + "!";
 }
-
-
 console.log( creazioneBox() )
+
+function bombs(array){
+    let arrBombs = []
+    for (let i = 0; i <= 16; i++){
+    arrBombs.push(array[i])
+    }
+    return arrBombs
+}
+
 function game(){
+
     griglia.innerHTML = ''
-    var squareToCreate = difficulty.value*difficulty.value;
+    let squareToCreate = difficulty.value*difficulty.value;
+    
     for (let i = 1; i <= squareToCreate; i++){
 
         let element = creazioneBox();
@@ -32,5 +44,7 @@ function game(){
     griglia.append (element)
 }
 }
+
+
 
 
