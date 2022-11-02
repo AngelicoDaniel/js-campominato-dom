@@ -6,10 +6,10 @@ button.addEventListener('click', game)
 let arrBombs = []
 
 function randomBombs (maxSquares){
-    for( let x = 0; x < 16; x++){
+    for( let i = 0; i < 16; i++){
         let randomBombs = Math.floor(Math.random() * maxSquares)
         if (arrBombs.includes(randomBombs)){
-            x--;
+            i--;
         }   else{
             arrBombs.push(randomBombs)
         }
@@ -34,19 +34,23 @@ function game(){
     let maxSquares = difficulty.value*difficulty.value;
     
     for (let i = 1; i <= maxSquares; i++){
-
+        // let bombs = randomBombs();
         let element = creazioneBox();
         console.log(element)
         element.innerHTML += `${i}`
         element.addEventListener('click', function() {
         console.log(this)
-        this.classList.toggle('active')
+        if ( this == arrBombs[i]){
+            this.classList.toggle('error')
+        }   else {
+            this.classList.toggle('active')
+        }
+
 
     })
-    
-    
+
     griglia.append (element)
-}
+    }
 }
 
 

@@ -31,3 +31,7 @@ footer {
 .active{
     background-color: darkslategray;
 }
+
+.error{
+    background-color: red;
+}
