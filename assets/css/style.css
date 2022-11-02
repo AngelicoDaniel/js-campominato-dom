@@ -1,0 +1,33 @@
+header {
+    height: 100px;
+}
+
+main {
+    height: calc(100vh - 170px);
+    background-color: #7fffd4;
+}
+
+footer {
+    height:  70px;
+}
+
+#griglia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.square{
+    border: 1px solid black;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active{
+    background-color: darkslategray;
+}
