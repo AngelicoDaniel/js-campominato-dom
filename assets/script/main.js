@@ -9,8 +9,7 @@ function bombe(){
     for ( i = 0; i < 16; i++){
     let bomb = Math.floor(Math.random() * parseInt(difficulty.value * difficulty.value)) + 1;
     bombs.push(bomb)
-}
-console.log(bombs)
+    }
 }
 
 
@@ -19,7 +18,7 @@ console.log(bombs)
 function play() {
     griglia.innerHTML = ''
     let bombElement = bombe();
-    console.log(bombElement)
+    console.log(bombs)
     for ( let i = 1; i <= difficulty.value * difficulty.value; i++) {
     const eleCell = document.createElement('div')
     eleCell.classList.add('square')
