@@ -20,13 +20,13 @@ function play() {
     let bombElement = bombe();
     console.log(bombs)
     for ( let i = 1; i <= difficulty.value * difficulty.value; i++) {
-    const eleCell = document.createElement('div')
-    eleCell.classList.add('square')
-    eleCell.style.width = "calc(100% / "+difficulty.value+")"
-    eleCell.innerHTML = `${i}`
-    griglia.append(eleCell)
+    const box = document.createElement('div')
+    box.classList.add('square')
+    box.style.width = "calc(100% / "+difficulty.value+")"
+    box.innerHTML = `${i}`
+    griglia.append(box)
     numbers.push(i)
-    eleCell.addEventListener('click', function () {
+    box.addEventListener('click', function () {
         if (numbers.includes(bombs[i])){
             i++
             this.classList.toggle('error')
@@ -37,6 +37,5 @@ function play() {
     }) 
 }   console.log(numbers)
 }
-
 
 
