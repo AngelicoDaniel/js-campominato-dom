@@ -26,9 +26,14 @@ function play() {
     eleCell.innerHTML = `${i}`
     griglia.append(eleCell)
     numbers.push(i)
-
     eleCell.addEventListener('click', function () {
-    this.classList.toggle('active')  
+        if (numbers.includes(bombs[i])){
+            i++
+            this.classList.toggle('error')
+        }   else {
+            this.classList.toggle('active')
+        }
+
     }) 
 }   console.log(numbers)
 }
